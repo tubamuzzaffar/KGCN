@@ -9,10 +9,17 @@ def train(args, data, show_loss, show_topk):
     adj_entity, adj_relation = data[7], data[8]
 
     model = KGCN(args, n_user, n_entity, n_relation, adj_entity, adj_relation)
+    print(model)
 
     # top-K evaluation settings
     user_list, train_record, test_record, item_set, k_list = topk_settings(show_topk, train_data, test_data, n_item)
-
+    
+    print(user_list)
+    print(train_record)
+    print(test_record)
+    print(item_set)
+    print(k_list)
+    
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
 
