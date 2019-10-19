@@ -13,10 +13,14 @@ def train(args, data, show_loss, show_topk):
     print(n_user)
     print(n_entity) 
     print(n_relation)
+    
+    print("adjacency entity:")
     print(adj_entity)
+    print("adjacency relation:")
     print(adj_relation)
 
     model = KGCN(args, n_user, n_entity, n_relation, adj_entity, adj_relation)
+    print("KGCN")
     print(model)
 
     # top-K evaluation settings
