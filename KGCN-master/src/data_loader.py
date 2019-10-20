@@ -94,6 +94,8 @@ def construct_adj(args, kg, entity_num):
     adj_entity = np.zeros([entity_num, args.neighbor_sample_size], dtype=np.int64)
     adj_relation = np.zeros([entity_num, args.neighbor_sample_size], dtype=np.int64)
     for entity in range(entity_num):
+        print("ENTITY")
+        print(entity)
         neighbors = kg[entity]
         n_neighbors = len(neighbors)
         if n_neighbors >= args.neighbor_sample_size:
