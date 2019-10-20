@@ -103,6 +103,8 @@ def construct_adj(args, kg, entity_num):
         else:
             sampled_indices = np.random.choice(list(range(n_neighbors)), size=args.neighbor_sample_size, replace=True)
         adj_entity[entity] = np.array([neighbors[i][0] for i in sampled_indices])
+        print("adjacney matrix for entity ")
+        print(adj_entity)
         adj_relation[entity] = np.array([neighbors[i][1] for i in sampled_indices])
 
     return adj_entity, adj_relation
