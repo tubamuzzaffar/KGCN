@@ -71,6 +71,11 @@ class KGCN(object):
             neighbor_relations = tf.reshape(tf.gather(self.adj_relation, entities[i]), [self.batch_size, -1])
             entities.append(neighbor_entities)
             relations.append(neighbor_relations)
+            print("neighbour enitties")
+            print(neighbor_entities)
+            print("neighbour relations")
+            print(neighbor_relations)
+
         return entities, relations
 
     def aggregate(self, entities, relations):
